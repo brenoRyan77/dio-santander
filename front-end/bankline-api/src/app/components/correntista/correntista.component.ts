@@ -27,21 +27,4 @@ export class CorrentistaComponent implements OnInit {
           console.log(error);
         });
   }
-
-  salvar(): void {
-    const correntista = {
-      cpf:this.cpf,
-      nome:this.nome
-    };
-    console.log(correntista);
-    this.correntistaService.salvarMovimentacao(correntista)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.exibirCorrentistas();
-        },
-        error => {
-          console.log(error);
-        });
-  }
 }

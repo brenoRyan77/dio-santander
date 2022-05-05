@@ -12,6 +12,10 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CorrentistaComponent } from './components/correntista/correntista.component';
+import { CadastrarCorrentistasComponent } from './components/cadastrar-correntistas/cadastrar-correntistas.component';
+import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
 
 registerLocaleData(localePt);
 
@@ -21,6 +25,10 @@ registerLocaleData(localePt);
     MovimentacaoListComponent,
     MovimentacaoNewComponent,
     CorrentistaComponent,
+    CadastrarCorrentistasComponent,
+    CabecalhoComponent,
+    FooterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
