@@ -11,7 +11,7 @@
             <div class="col-md-8">
               <label for="iCorrentista" class="form-label">Correntista</label>
               <select id="iCorrentista"  [(ngModel)]="correntista" class="form-select">
-                <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf}}-{{c.nome}}</option>
+                <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf}} - {{c.nome}}</option>
               </select>
             </div>
             <div class="col-7">

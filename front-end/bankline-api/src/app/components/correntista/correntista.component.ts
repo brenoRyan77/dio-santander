@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CorrentistaService } from 'src/app/services/correntista.service';
 
 @Component({
   selector: 'app-correntista',
@@ -7,9 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CorrentistaComponent implements OnInit {
 
-  constructor() { }
+  correntistas:any;
+  cpf:any;
+  nome:any;
+  constructor(private correntistaService: CorrentistaService) { }
 
   ngOnInit(): void {
+    this.exibirCorrentistas();
+  }
+  exibirCorrentistas(): void {
+    this.correntistaService.list()
+      .subscribe(
+        data => {
+          this.correntistas = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
+  salvar(): void {
+    const correntista = {
+      cpf:this.cpf,
+      nome:this.nome
+    };
+    console.log(correntista);
+    this.correntistaService.salvarMovimentacao(correntista)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.exibirCorrentistas();
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }
